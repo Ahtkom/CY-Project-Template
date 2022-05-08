@@ -1,0 +1,27 @@
+\input{preamble/preamble}
+\input{title/title}
+
+\includeonly{
+    section/sec
+}
+
+\begin{document}
+%region header
+\maketitle
+\input{abstract/abstract}
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\setcounter{page}{0}
+%endregion
+
+\include{section/sec}
+
+\include{bibliography/bibliography}
+
+\appendix
+
+\end{document}

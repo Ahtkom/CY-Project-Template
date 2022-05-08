@@ -2,22 +2,20 @@
 #include <iostream>
 
 Generator::Generator(const std::filesystem::path &path, Project *type)
-    : path_(path)
+    : target_path_(path / type->getName())
     , project_type(type)
 {
 }
 
 void Generator::createTemplate()
 {
-    auto current_path = std::filesystem::current_path();
-    auto target_path = current_path / project_type->getName();
-
-    if (std::filesystem::exists(target_path)) {
-        std::filesystem::remove_all(target_path);
+    if (std::filesystem::exists(target_path_)) {
+        std::filesystem::remove_all(target_path_);
     } else {
-        std::filesystem::create_directory(target_path);
+        std::filesystem::create_directory(target_path_);
     }
 
-    std::filesystem::copy(path_, target_path,
+    std::filesystem::copy(root_path / "templates" / project_type->getName(),
+                          target_path_, 
                           std::filesystem::copy_options::recursive);
 }

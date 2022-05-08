@@ -1,27 +1,20 @@
 \input{preamble/preamble}
 \input{title/title}
 
-\includeonly{
-    section/sec
-}
-
 \begin{document}
-%region header
-\maketitle
-\input{abstract/abstract}
-\thispagestyle{empty}
+\heiti
+\input{title/logo}
 
-\newpage
-\tableofcontents
-\thispagestyle{empty}
+\zihao{6}
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
 
-\setcounter{page}{0}
-%endregion
 
-\include{section/sec}
 
-\include{bibliography/bibliography}
 
-\appendix
+\section{参考文献}
+\input{bibliography/bibliography}
+\input{title/thanks}
 
 \end{document}

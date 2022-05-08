@@ -9,7 +9,9 @@
 class Generator
 {
 public:
-    Generator(const std::filesystem::path &path, Project *type);
+    static std::filesystem::path root_path;
+
+    Generator(const std::filesystem::path &target_path, Project *type);
 
     ~Generator() = default;
 
@@ -18,7 +20,7 @@ public:
 private:
     Project *project_type;
 
-    std::filesystem::path path_;
+    std::filesystem::path target_path_;
 };
 
 #endif // GENERATOR_H_
