@@ -1,9 +1,11 @@
 #include <Generator.h>
 #include <iostream>
 
-Generator::Generator(const std::filesystem::path &path, Project *type)
+Generator::Generator
+  (const std::filesystem::path &path, Project *type, Option opt)
     : target_path_(path / type->getName())
     , project_type(type)
+    , opt_(opt)
 {
 }
 

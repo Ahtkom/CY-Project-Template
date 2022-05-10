@@ -1,9 +1,6 @@
 \input{preamble/preamble}
 \input{title/title}
 
-\includeonly{
-    section/sec
-}
 
 \begin{document}
 %region header
@@ -14,13 +11,15 @@
 \newpage
 \tableofcontents
 \thispagestyle{empty}
-
 \setcounter{page}{0}
+\newpage
 %endregion
 
-\include{section/sec}
+\input{section/sec}
 
-\include{bibliography/bibliography}
+\newpage
+\bibliographystyle{plain}
+\bibliography{bibliography/bibliography}
 
 \appendix
 
