@@ -1,11 +1,11 @@
 #ifndef GENERATOR_H_
 #define GENERATOR_H_
 
-#include <protype/Project.h>
-#include <Option.h>
+#include "Option.h"
+#include "protype/Project.h"
 
-#include <string>
 #include <filesystem>
+#include <string>
 
 /**
  * @brief project template generator, it will generate target type project
@@ -14,23 +14,22 @@
 class Generator
 {
 public:
-    // the project path on your device, you need to redeclare it in main.cpp
-    static std::filesystem::path root_path;
+  // the project path on your device, you need to redeclare it in main.cpp
+  static std::filesystem::path root_path;
 
-    Generator(const std::filesystem::path &target_path,
-              Project *type,
-              Option opt = Option::overwrite);
+  Generator(const std::filesystem::path &target_path, Project *type,
+      Option opt = Option::overwrite);
 
-    ~Generator() = default;
+  ~Generator() = default;
 
-    void createTemplate();
+  void createTemplate();
 
 private:
-    std::filesystem::path target_path_;
+  std::filesystem::path target_path_;
 
-    Project *project_type;
+  Project *project_type;
 
-    Option opt_;
+  Option opt_;
 };
 
 #endif // GENERATOR_H_

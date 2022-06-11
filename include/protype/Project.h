@@ -6,28 +6,21 @@
 class Project
 {
 public:
-    Project(std::string path)
-        : template_path_(path)
-    {}
+  Project(std::string path)
+      : template_path_(path) { }
 
-    virtual ~Project() = default;
+  virtual ~Project() = default;
 
-    std::string getTemplatePath() {
-        return template_path_;
-    }
+  std::string getTemplatePath() { return template_path_; }
 
-    std::string getName() {
-        return name_;
-    }
+  std::string getName() { return name_; }
 
-    void setName(const std::string &name) {
-        name_ = name;
-    }
+  void setName(const std::string &name) { name_ = name; }
 
 private:
-    std::string template_path_; // relative
+  std::string template_path_; // relative
 
-    std::string name_;
+  std::string name_;
 };
 
 #endif // PROJECT_H_
