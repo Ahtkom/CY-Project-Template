@@ -1,19 +1,22 @@
-#ifndef PROTYPE_PROGRAM_H_
-#define PROTYPE_PROGRAM_H_
+#pragma once
 
 #include "protype/Project.h"
 
 #include <string>
 
+namespace ccyy {
+namespace gen {
+
 class Program : public Project
 {
 public:
-  Program()
-      : Project("templates\\program\\") {
-    setName("program");
-  }
+    Program(std::string project_name)
+        : Project("templates/project/program/", project_name) { }
 
-  ~Program() override = default;
+    ~Program() override = default;
+
+    std::string getTypeName() override { return "program"; }
 };
 
-#endif // PROTYPE_PROGRAM_H_
+} // namespace gen
+} // namespace ccyy

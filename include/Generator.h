@@ -1,35 +1,36 @@
-#ifndef GENERATOR_H_
-#define GENERATOR_H_
+#pragma once
 
-#include "Option.h"
 #include "protype/Project.h"
 
+#include <boost/program_options.hpp>
 #include <filesystem>
 #include <string>
 
+namespace ccyy {
+namespace gen {
+
 /**
  * @brief project template generator, it will generate target type project
- *        under \c target_path
+ *        under \c target_root
  */
 class Generator
 {
+    using Path = std::filesystem::path;
+
 public:
-  // the project path on your device, you need to redeclare it in main.cpp
-  static std::filesystem::path root_path;
+    Generator(Path target_root, Project *project, std::string openmode);
 
-  Generator(const std::filesystem::path &target_path, Project *type,
-      Option opt = Option::overwrite);
+    ~Generator() = default;
 
-  ~Generator() = default;
-
-  void createTemplate();
+    void generate() const;
 
 private:
-  std::filesystem::path target_path_;
+    Path target_root_;
 
-  Project *project_type;
-
-  Option opt_;
+    Project *project_;
+    
+    std::string openmode_;
 };
 
-#endif // GENERATOR_H_
+} // namespace gen
+} // namespace ccyy

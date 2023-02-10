@@ -1,19 +1,22 @@
-#ifndef PROTYPE_REPORT_H_
-#define PROTYPE_REPORT_H_
+#pragma once
 
 #include "protype/Project.h"
 
 #include <string>
 
+namespace ccyy {
+namespace gen {
+
 class Report : public Project
 {
 public:
-  Report()
-      : Project("templates\\report\\") {
-    setName("report");
-  }
+    Report(std::string project_name)
+        : Project("templates/project/report/", project_name) { }
 
-  ~Report() override = default;
+    ~Report() override = default;
+
+    std::string getTypeName() override { return "report"; }
 };
 
-#endif // PROTYPE_REPORT_H_
+} // namespace gen
+} // namespace ccyy

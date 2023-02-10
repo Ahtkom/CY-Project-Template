@@ -1,21 +1,20 @@
 ---
 Language: Cpp
-IndentWidth: 2
-AccessModifierOffset: -2
+IndentWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
 AlignAfterOpenBracket: DontAlign
-AlignArrayOfStructures: Right
 AlignConsecutiveAssignments: true
 AlignConsecutiveMacros: true
-AlignConsecutiveDeclarations: true
+AlignConsecutiveDeclarations: false
 AlignOperands: Align
 AlignTrailingComments: true
 AllowShortBlocksOnASingleLine: Empty
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: All
-AlwaysBreakAfterReturnType: TopLevelDefinitions
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: true
@@ -27,10 +26,9 @@ BraceWrapping:
   AfterUnion: true
   AfterStruct: true
   SplitEmptyRecord: false
-# BreakBeforeConceptDeclarations: Always
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
 BreakStringLiterals: true
 IncludeBlocks: Regroup
 SpaceInEmptyBlock: true
-...
+... 

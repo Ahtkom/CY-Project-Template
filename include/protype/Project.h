@@ -1,26 +1,41 @@
-#ifndef PROJECT_H_
-#define PROJECT_H_
+#pragma once
 
 #include <string>
+
+namespace ccyy {
+namespace gen {
+
+enum ProjectType
+{
+    PROJECT,
+    ARTICLE,
+    PROGRAM,
+    REPORT
+};
 
 class Project
 {
 public:
-  Project(std::string path)
-      : template_path_(path) { }
+    Project(std::string template_name, std::string project_name)
+        : template_name_(template_name)
+        , project_name_(project_name) { }
 
-  virtual ~Project() = default;
+    explicit Project(std::string project_name)
+        : Project("templates/project/", project_name) { }
 
-  std::string getTemplatePath() { return template_path_; }
+    virtual ~Project() = default;
 
-  std::string getName() { return name_; }
+    std::string getTemplateName() { return template_name_; }
 
-  void setName(const std::string &name) { name_ = name; }
+    virtual std::string getTypeName() { return "project"; }
+
+    std::string getName() { return project_name_; }
 
 private:
-  std::string template_path_; // relative
+    std::string template_name_; // relative
 
-  std::string name_;
+    std::string project_name_;
 };
 
-#endif // PROJECT_H_
+} // namespace gen
+} // namespace ccyy

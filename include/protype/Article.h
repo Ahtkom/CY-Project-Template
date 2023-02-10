@@ -1,19 +1,22 @@
-#ifndef PROTYPE_ARTICLE_H_
-#define PROTYPE_ARTICLE_H_
+#pragma once
 
 #include "protype/Project.h"
 
 #include <string>
 
+namespace ccyy {
+namespace gen {
+
 class Article : public Project
 {
 public:
-  Article()
-      : Project("templates\\article\\") {
-    setName("article");
-  }
+    Article(std::string project_name)
+        : Project("templates/project/article/", project_name) { }
 
-  ~Article() override = default;
+    ~Article() override = default;
+
+    std::string getTypeName() override { return "article"; }
 };
 
-#endif // PROTYPE_BEAMER_H_
+} // namespace gen
+} // namespace ccyy
